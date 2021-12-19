@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buildings</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="bg-light">
+    
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+         <div class="row">
+          <div class="col-2">
+              <%= image_tag("Lavonne.png", class:"img-fluid", background_color:"transparent") %>
+            </div>
+
+        
+            <div class="col">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>  
+          
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav me-auto mb-2 md-lg-0">
+              <li class="nav-item"> 
+                <%= link_to "Building", buildings_path, class: "nav-link active"%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Office", offices_path, class: "nav-link active"%>
+              </li>
+            </ul>
+          </div>
+      </div>  
+    </nav>
+    </div>
+    
+
+    <div class="container mt-5 pt-5">
+      <%= yield %>
+    </div>
+  
+  </body>
+</html>
+ 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+      <% if @building.picture.attached? %>
+        <%= image_tag @building.picture, class: 'w-25' %>
+      <% end %>  
+
+      <p>
+        <strong>Name:</strong>
+        <%= @building.name %>
+      </p>
+
+      <p>
+        <strong>Address:</strong>
+        <%= @building.address %>
+      </p>
+
+      <p>
+        <strong>City:</strong>
+        <%= @building.city %>
+      </p>
+
+        <p>
+          <strong>Office:</strong>
+          <ul>
+            <% @building.office.each do |a| %>
+              <li>
+                <%= link_to a.number, office_path(a) %>
+              </li>
+            <% end %>
+          </ul>
+        </p>
+
+
+
+<%= link_to 'Edit', edit_building_path(@building) %> | <%= link_to 'Back', buildings_path %>
